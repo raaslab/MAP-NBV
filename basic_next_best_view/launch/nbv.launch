@@ -1,0 +1,29 @@
+<launch>
+  <node name="basic_next_best_view" type="basic_next_best_view" pkg="basic_next_best_view" output="screen">
+    <param name="voxel_resolution" type="double" value="1" />
+    <param name="sensor_range_max" type="double" value="10" />
+
+    <param name="sphere_radius" type="double" value="17" />
+
+    <param name="horizontal_resolution" type="double" value="30" />
+    <param name="vertical_resolution" type="double" value="30" />
+
+    <param name="half_fov_horizontal" type="double" value="45" />
+    <param name="half_fov_vertical" type="double" value="45" />
+    <param name="latitude_max" type="double" value="93" />
+    <param name="latitude_min" type="double" value="92" />
+    <param name="latitude_step" type="double" value="1" />
+    <param name="longitude_max" type="double" value="330" />
+    <param name="longitude_min" type="double" value="0" />
+    <param name="longitude_step" type="double" value="30" />
+    <param name="zrotation_max" type="double" value="330" />
+    <param name="zrotation_min" type="double" value="0" />
+    <param name="zrotation_step" type="double" value="30" />
+    <param name="occupied_voxel_weight" type="double" value="0" />
+    <param name="unknown_voxel_weight" type="double" value="1" />
+    <param name="world_frame" type="string" value="/world_enu" />
+
+  </node>
+
+  <node pkg="tf" type="static_transform_publisher" name="link1_broadcaster" args="0 0 0 0 0 0 1 world_enu pointr 100" />
+</launch>
